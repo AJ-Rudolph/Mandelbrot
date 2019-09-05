@@ -18,7 +18,7 @@ public class Window extends JFrame{
     }
  
 
-    public Window(int width, int height) {
+    public Window(int width, int height, Pixel [][] pixArr) {
         
         Window.width=width;
         Window.height=height;
@@ -26,7 +26,7 @@ public class Window extends JFrame{
        
 
         //adding JPanel to screen
-        this.add(new Screen());
+        this.add(new Screen(pixArr));
 
         // Set settings for JFrame window
         this.setTitle(screenTitle);

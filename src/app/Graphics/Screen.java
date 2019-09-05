@@ -8,10 +8,11 @@ import javax.swing.JPanel;
 
 public class Screen extends JPanel{
 
-
-    public Screen () {
+    private Pixel [][] pixArr;
+    public Screen (Pixel [][] pixArr) {
         // this lets J Components anywhere on screen
         this.setLayout(null);
+        this.pixArr= pixArr;
     }
     /**
     
