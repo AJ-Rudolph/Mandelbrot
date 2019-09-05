@@ -26,11 +26,13 @@ public class Screen extends JPanel{
         // goes to parent class and run in super.paint component
         super.paintComponent(g);
 
+        for(int x=0; x<pixArr.length;x++) {
+            for (int y=0; y<this.pixArr[x].length;y++) {
+                this.pixArr[x][y].paintComponent(g);
+            }
+        }
 
-        g.setColor(Color.RED);
-                //(x,y,width,height)
-        Pixel p = new Pixel(Color.RED,100,100);
-        p.paintComponent(g);
+
     }
 
 

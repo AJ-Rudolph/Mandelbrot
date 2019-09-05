@@ -15,7 +15,6 @@ public class Mandelbrot {
         //max amojnt of interations per pixel
         final int MAX_ITER=80;
 
-        
         //A complex number
         ComplexNumber z= new ComplexNumber(0,0);
         int n=0; //amount of times we have run Mendelbrot
@@ -30,21 +29,24 @@ public class Mandelbrot {
     public Pixel [][] run() {
 
         final int MAX_ITER= 80;
+        final int WIDTH = 640;
+        final int HEIGHT = 480;
         
-        Pixel[][] pixArr = new Pixel[Window.HEIGHT] [Window.WIDTH];
+        Pixel[][] pixArr = new Pixel[640][480];
 
         
-        for(int x =-320, i=0; x< 320; x++, i++  ) {
-            for(int y= -240,j=0; y< 240; y++, j++) {
+        for(int x =0; x< WIDTH; x++  ) {
+            for(int y= 0; y< HEIGHT; y++) {
                 ComplexNumber c = new ComplexNumber(
-                    -2 + (x/(double)Window.WIDTH) * (1+2),
-                    -1 + (y/(double)Window.HEIGHT) * (1 +1)
+                    (double)-2.0 + ((double)x/(double)WIDTH) * ((double)(1+2)),
+                    (double)-1.0 + ((double)y/(double)HEIGHT) * ((double)(1 +1))
                     );
                 int result =this.mandelbrot(c);
                 int color = 255 - result * 255/MAX_ITER;
                 Pixel p= new Pixel(
-                    new Color((float) color, (float)color, (float) color),x,y);
-                pixArr[i][j] = p;
+                    new Color(color,color,color),x,y);
+
+                pixArr[x][y] = p;
             }
         }
 

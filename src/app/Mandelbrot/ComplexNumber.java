@@ -33,7 +33,7 @@ public class ComplexNumber {
     
     public  double absoluteValue() {
        return Math.sqrt(
-           Math.pow(this.real, 2) +Math.pow(this.img,2)
+           Math.pow(this.real, 2) + Math.pow(this.img,2)
        );
     
     }    public static ComplexNumber add(ComplexNumber n1, ComplexNumber n2) {
@@ -52,7 +52,7 @@ public class ComplexNumber {
 
     public static ComplexNumber times(ComplexNumber n1, ComplexNumber n2) {
         double real= (n2.getReal() * n1.getReal())     - (n2.getImaginary()*  n1.getImaginary());
-        double img = (n2.getReal()* n1.getImaginary()) - (n2.getImaginary()* n1.getReal());
+        double img = (n2.getReal()* n1.getImaginary()) + (n2.getImaginary()* n1.getReal());
 
         return new ComplexNumber(real,img);
     }

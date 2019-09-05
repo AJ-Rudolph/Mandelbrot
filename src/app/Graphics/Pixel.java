@@ -19,13 +19,10 @@ public class Pixel extends JComponent {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(this.color);
-
-        //translate coordinates
-        x= Window.WIDTH/2 + x;
-        y= Window.HEIGHT/ 2+ y;
-
+        
+        
         //draw pixel
+        g.setColor(this.color);
         g.fillRect(x,y,1,1);
     }
 }
